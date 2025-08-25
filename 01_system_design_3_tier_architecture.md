@@ -316,3 +316,5 @@ NO CODE HERE -> so no code.
 Step 3: ERD Schema (tomorrow)
 
 
+### Homework:
+
