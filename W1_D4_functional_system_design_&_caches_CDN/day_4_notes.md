@@ -67,3 +67,43 @@
 - telemetry
 - they don't use SQL.
 
+### Netflix ERD:
+
+- all users need email.
+- the big problem of Netflix is bandwidth:
+  - 5 megabit per second is waht you need for streaming
+  - if 5% of users are watching => 5 million
+  - 5 terrabits per second!!!
+  - How?
+    - They use CDNs to serve their content to users at this scale.
+    - Storage is not the issue
+    - YOUTUBE: has to worry about storage.
+
+### AirBnB
+- images would be saved as references to a saved image in a bucket=> S3
+  - Amazon S3 
+- AirBnB has lots of images, even small ones like avatars.
+- Storage:
+  - 200 million users
+  - each user 500 bytes meta-data
+  - 
+### Ngrok:
+- What is it?
+- Web-hooks:
+  - a mechanism where one service calls another service when an event happens.
+  - It's a feature -> not every website supports it.
+  - To do this they need your URL
+    - the problem with development is your project is on locval host
+  - so Ngrok gives you a tunnel to expose your project to a public endpoint.
+  - It provides a persistent connection (between whatever you created on the cloud server and your local host) and it lives until you kill the server.
+- LSbot: when you ask a question slack sends a webHook event to the LLM
+
+### Launch school
+- it's all stored on Github
+
+### building request bin
+
+- create a spec for the other half of your team.
+- You will have to communicate a lot
+- Try to figure out how to work as a team
+- Start a mutual gitHub? You can but it's not necessary
