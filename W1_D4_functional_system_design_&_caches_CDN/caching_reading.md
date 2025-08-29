@@ -110,6 +110,7 @@
 - It's important to measure performance:
 - hit rate: percentage of requests that the cache can cover without having to ask original source
 - miss rate: the opposite of the above
+  - maybe the cache size is too small.
 - cache size: the amount of memory/storage allocated for the cache
 - cache latency: time it takes to access data from the cache. Lower cache latency means it's faster and more effective
 ### Conclusion
