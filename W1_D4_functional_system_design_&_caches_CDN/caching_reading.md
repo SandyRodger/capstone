@@ -48,7 +48,9 @@
   - ie it only takes 20 minutes for a villager to get a book, instead of 3 hours
 - **reduce network load**: minimizes the amount of data that needs to be transmitted over the network. It's stored locally so you don't have to fetch data from the original source
   - ie each book travels along the road once, instead of every single time a villager wants a book
+
 <img width="340" height="207" alt="Screenshot 2025-08-29 at 11 25 53" src="https://github.com/user-attachments/assets/5a976f78-9bef-46c9-9891-21a42fc8e0e1" />
+
 - **Increased scalability** it makes an app more scalable by reducing the load on the original source.
   - so now the librarians in the main library have more time to organise travelling libraries because they aren't having to serve individual villagers all day.
 - **Better user experience** faster response times and reduced latency can lead to a better user experience
