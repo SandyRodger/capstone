@@ -2,6 +2,7 @@
 
 ## What is it?
 
+- It's French bruv.
 - caching is temporarily storing frequently accessed data in a cache, which is faster to access than the original source of the data.
 - The cache is a high-speeed storage layer that sits between the application and the original source of the data
 - Analogy: It's like a travelling library that takes books to remote villages so these people don't have to each travel to the city to get books
@@ -25,7 +26,8 @@
 - faster than retrieving data from the remote source
 
 ### Database caching
-
+- seems like a contradiction, what it means is: using the memory on the database server:
+  - analogy of a bookshelf outside the main library.
 - stores frequently accessed data in the database itself
 - reduces the need to access external storage
 
@@ -90,12 +92,17 @@
 
 ### Cache invalidation strategies
 - write through cache : write to cache and DB simultaneously. total consistency and protection from crashes. Higher latency for writes.
+  - over-write
 - write around cache : write directly to storage bypassing the cache
-write back cache : data is only written to the cache. Data is only written to permanent storage under certain conditions
-write behind cache: similar to above, but data is written to permanent storage at specified intervals.
+  - so cache record gets deleted? (implied)
+  - This is the exception becasue we aren't saving to the cache
+- write back cache : data is only written to the cache. Data is only written to permanent storage under certain conditions
+  - update the cache and then update the database when a X (like cache is full)
+- write behind cache: similar to above, but data is written to permanent storage at specified intervals.
+  - when you write data you're saying "I am going to invalidate anything on the cache relating to that data"
 ### Cache invalidations methods
 - purge: everything related to a URL
-- refresh: always retrieves from origin server and refreshes the cahce.
+- refresh: always retrieves from origin server and refreshes the cache.
 - ban: any cached content matching the criteria is removed
 - time-to-live: after some time the data is removed
 - stale-while-revalidate: "Well here's what I got, let me just check it's the latest one"
