@@ -8,6 +8,7 @@
 - Analogy: It's like a travelling library that takes books to remote villages so these people don't have to each travel to the city to get books
 
 <img width="344" height="207" alt="Screenshot 2025-08-29 at 11 30 53" src="https://github.com/user-attachments/assets/1983894a-901f-4525-95aa-d2a4d03f9d50" />
+Akin to RAM vs Hard Drive storage in your personal computer.
 
 - There are different ways to cache. Here are some popular ways:
   - in-memory caching
@@ -84,28 +85,38 @@
 
 ### Cache replacement policies
 1. Least Recently Used
+- most common strategy.
+- Common interview question
 2. Least Frequently used
 3. FIFO
+  - maybe a news
 4. Random Replacement
+  - not used a lot
 
 ### Comparison of different replacement policies
 
 -LRU and LFU are more effective but have a performance cost due to complexity
 
-### Cache invalidation strategies
+### Cache invalidation strategies (write strategies)
+- 2 hardest things in coding -> variable naming & cache invalidation
 - write through cache : write to cache and DB simultaneously. total consistency and protection from crashes. Higher latency for writes.
   - over-write
 - write around cache : write directly to storage bypassing the cache
-  - so cache record gets deleted? (implied)
+  - so cache record is bypassed -> it's a problem now that the data is state. So you need some invalidation strategy.
+  - So writing to the cache and invalidating the cache are 2 separate things.
   - This is the exception becasue we aren't saving to the cache
 - write back cache : data is only written to the cache. Data is only written to permanent storage under certain conditions
   - update the cache and then update the database when a X (like cache is full)
 - write behind cache: similar to above, but data is written to permanent storage at specified intervals.
   - when you write data you're saying "I am going to invalidate anything on the cache relating to that data"
+- caches are rarely down (they're pretty stable)
+### Read strategies
+
+
 ### Cache invalidations methods
-- purge: everything related to a URL
+- purge: everything related to a URL (or other key) immediately removed
 - refresh: always retrieves from origin server and refreshes the cache.
-- ban: any cached content matching the criteria is removed
+- ban: any cached content matching the criteria is invalidated -> then the next time the data is requested the data is removed
 - time-to-live: after some time the data is removed
 - stale-while-revalidate: "Well here's what I got, let me just check it's the latest one"
 ### Cache performance metrics
@@ -116,3 +127,19 @@
 - cache size: the amount of memory/storage allocated for the cache
 - cache latency: time it takes to access data from the cache. Lower cache latency means it's faster and more effective
 ### Conclusion
+
+### how to read
+
+- cache aside:
+  - much more common
+- read through
+  - if it isn;t in the cache 
+
+
+### Redis:
+
+- you have a server that runs Reddis
+
+### Memcached
+
+- There are some differences, Reddis is used more frequently
