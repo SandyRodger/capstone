@@ -1,1 +1,1 @@
-console.log('fuck')
+var o = 0
