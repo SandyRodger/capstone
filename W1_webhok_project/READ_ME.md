@@ -50,3 +50,7 @@ db.github_payloads.find(
 ).sort({ _id: -1 }).limit(3)
 ```
 
+### Things my team talk about that I don't know:
+
+- mongooseDB
+- 
