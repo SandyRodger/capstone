@@ -116,9 +116,30 @@
 - If you have a system that can get a network partition => you must choose between consistent OR available
 - If there's no partition possible, so eveything on the sam emachine you don;t need to think about this.
 - However the choice isn't 100% binary. There are levels of consistency and availabilty you can tweak.
-- A lot of the time what you're really trading is consistency and response-time. Because the more nodes you have involved the more consistent the system is (?)
-- it's a business decison. Like AMazon want fast shopping and high availability.
-- trADE : CONSISTENCY & RESPONSE-TIME
+- trade: consistency V response time
+- A lot of the time what you're really trading is consistency and response-time. Because the more nodes you have involved the more consistent the system is, but the slower it is.
+- it's a business decison. Like Amazon want fast shopping and high availability.
+- safety V liveness (in other words)
+
+### when to use a NoSQL database
+
+- [44:30]
+- if you have lots of data. More data than you can fit onto a single database
+- Relational Databases is really hard, so if you want to avoid this.
+- In reality there's a lot of data out there and many businesses need to deal with it.
+- Most people go into NoSQL because htey want to develop more easily (not because of data)
+  - example of Guardian writers treating an article as a natural aggregate.
+
+### analytics
+
+- [49:00]
+- data warehousing (nightmare)
+
+### Polyglot persistence
+
+- [51:00]
+- Lots of different types of databases speaking to each other
+- new problems
 
 ## Further study
 
@@ -127,3 +148,4 @@
 - caches as being a single point of a dist-sys.
 - difference between key-value & document database (blurry difference -it's an approximation)
 - What is a database cluster?
+- Using an app to encapsulate your database? [48:30]
