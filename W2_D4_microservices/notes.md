@@ -12,6 +12,7 @@
 - It has sophisticated way to check authentication.
 - Different to service mesh because it does service to service communication.
 
+- They can take 50 - 100 K requests per second. SO if you need to scale them up you can add more and put a load balancer in front of them
 ### Side car proxy -> service mesh
 
 - Control plane & side-car = service mesh.
@@ -26,3 +27,15 @@
 - **canary** deploy for 5% of users, see how it's received and slowly increase.
   - for example aria
 - **blue/green** deployement
+
+### Uber
+
+- geospatial indexes -> You can store this in Reddis or Postgres (there's an extension).
+
+<img width="1440" height="900" alt="Screenshot 2025-09-04 at 18 37 14" src="https://github.com/user-attachments/assets/ac8f8027-56d4-4959-98e3-7d9a6a57ea4f" />
+
+(We should have done numbers to indicate the order)
+- the redis solves the problem of drivers having only 15 seconds to accept rides. Like ticket master only letting bookings exist for 20 mintes before deleting them. it is a cache so it can scale very fast. The **distributed lock** is the name for this TTL thing.
+- This is a less common question for mid-senior interviews. More for staff engineers and higher
+
+- 
