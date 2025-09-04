@@ -54,3 +54,20 @@ db.github_payloads.find(
 
 - mongooseDB
 - 
+
+### Preston's server .env.development and test:
+
+PG_SUDO_USER=
+PGUSER=
+PGPASSWORD=password
+PGHOST=localhost
+PGPORT=5432
+PGDATABASE=request_bin_development
+MONGO_URL="mongodb://127.0.0.1:27017/request_bin_development"
+MONGO_USER=
+MONGO_PASSWORD=password
+MONGO_DATABASE=request_bin_development or test
+client .env development:
+VITE_WEBHOOK_URL="http://localhost:3000"
+.env.test
+VITE_WEBHOOK_URL="http://localhost:3000/testing"
