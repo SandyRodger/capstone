@@ -43,7 +43,21 @@
 - We can make our SQL query a little bit faster by using an index. The SQL queries with otherwise be messy and super long
 - Statement timeout: if a query takes longer that n, it will get cut.
 - question: does the comapny stack restrict solutions you could come up with?
-  - yes. The company's been going for 20 years. To change anything would take a significant amount of effort and would rpple out.
+  - yes. The company's been going for 20 years. To change anything would take a significant amount of effort and would ripple out.
+### stack
+  - MySQL
+  - _________
+  - Rails
+  - Sidekick
+
+###
+
+- on the job it'll feel like a fire-hose, but it will slowly come together.
+- You inherit code from other people (9/10 times) so you have to work within those restrictions.
+- The junior move is to add a new thing or switch to a new thing, but for the job you need the ability to say based on where we are this is what we could do to support what we're trying to do, and leave ourselves some room to allow us to go in a better direction.
+- "prefer doing cursor pagination over limit offset"
+- 
 
 ### Questions
-- how much has AI changed the way you work -> the complicated SQL query you showed us looked ripe for ai optimisation.
+
+- how do people fail interviews
