@@ -23,3 +23,46 @@
 
 - Next week:
   - make your VPC in US-East-1 (AWS account?)
+
+### rbin presentations
+
+#### Group 1
+
+- `npm run build` command does not work -> that needs to run for Monday.
+- ngrok running to the back-end
+- Problems
+  - Ben Walker:
+    - learning Github deeply
+      - merge versus rebasing
+      - stash ?
+    - Team-work
+      - individual work / duo work / all-hands work
+      - Productive / unproductive (time-suck) work
+     
+    - Ryan:
+      - Github
+      - 
+  - Phil Knapp
+  - Zane Lee
+    - feeling like a professional engineer
+    - The back and forth of figuring out things like wire-framing
+
+#### Group 2
+
+- Ben Stevens
+- saurabh Kamboj
+  - how to put the paths together and what paths to put together
+- Xiran
+- Tyler
+
+#### Group 3
+
+- Good github work process:
+  - pull
+  - create a branch
+  - try not to work on what your colleagues are working on
+  - then push and there shouldn't be merge conflicts.
+  - The work should be something simple, not a big thing.
+
+#### Group 4
+#### Group 5
