@@ -71,3 +71,54 @@ client .env development:
 VITE_WEBHOOK_URL="http://localhost:3000"
 .env.test
 VITE_WEBHOOK_URL="http://localhost:3000/testing"
+
+### Steps to get the final app working on my machine:
+
+- at the end of this process you will have 3 servers running:
+  - express
+  - vite
+  - ngrok
+
+1. in the server directory create these 2 files:
+
+```.env.development
+PG_SUDO_USER=sandyboy
+PGUSER=sandyboy
+PGPASSWORD=password
+PGHOST=localhost
+PGPORT=5432
+PGDATABASE=request_bin
+MONGO_URL="mongodb://127.0.0.1:27017/request_bin_development"
+MONGO_USER=
+MONGO_PASSWORD=password
+MONGO_DATABASE=request_bin
+```
+
+```.env.test
+VITE_WEBHOOK_URL="http://localhost:3000/testing"
+```
+
+2. Install webhooks
+
+```
+npm install ws
+npm install --save-dev @types/ws
+```
+
+3. run the postgres schema
+
+```
+psql -U sandyboy -d request_bin -f src/db/postgres/schema.sql
+```
+
+4. change `/Users/sandyboy/Desktop/request-bin/client/src/components/BinPage/BinPageContent.tsx` line 30 to your ngrok link:
+
+`strictly-fluent-llama.ngrok-free.app/{selectedBin.id}`
+
+5. start ngrok with:
+
+`ngrok http --url=strictly-fluent-llama.ngrok-free.app 3000`
+
+6. test it out with POSTMAN and it should work.
+
+
