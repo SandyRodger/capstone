@@ -128,3 +128,80 @@ subnet mask is the portion you CANT USE
     - add users to group
     - attach policy to group
   - "Resource policy"
+ 
+### Roles
+
+- they have a permissions policy
+- `sts:AssumeRole` to assume a role in CLI
+- Trust policy & Permission policy
+- Each instance can only have one role attached to it
+
+### break glass emergency
+
+- single sign-on from well know services:
+  - facebook
+  - twitter
+- fuck i didn't underdtand this... I wasn't concentrating
+
+### public versus private services in AWS
+
+### Region
+
+- Avalability zones -> think of them as data-centres even though that's not exactly what they are.
+- Some services are global
+
+### CIDR
+
+- AKA the subnet mask. The `/number` after your IP
+- It locks a portion
+- VPR CIDR 172.31.0.0/16 is the largest one.
+- East1 has 6 availability zones.
+
+### default VPC
+- don't delete it -> everything is allowed. Zero restrictions.
+- don't use it
+- custom VPC beings with nothing is allowed. So it's a head-ache configuring everything.
+- So for testing it's fine, but if you're deploying anything then you want a custom one.
+
+### creating a VPC
+
+- best practices:
+  - usually the addresses begin with 10.x.y.z (a convention)
+  -  everyone uses 10.something, then 10.1, so pick 10. something greater than 1.
+  -  /16 is the biggest one. (65,536 IPs)
+  -  The smallest is /28:
+    -  smallest
+    -  16 IPs
+  - bigger's good. It costs no more. but you're not google, so don't choose the biggest.
+    - 10.4.0.0/20 -> 4096 IPs
+  - For our simple project we can have the smallest one.
+  - VPC peering (which we won't cover) can cause an issue if you have the same VPC. But 99% of the time it doesn;t matter.
+  - Q: ipv6? We're not talking about it now.
+  - These private ranges were created because IPv4 were running out of IPs.
+- You're going to want your appp in AZ-1 and AZ-2 so if one goes down you can keep going.
+- How many subnets? -> 3 because 1 for web tier, one for app tier, one for db. + one for buffer if you want.
+
+- VPC CIDR must be the greatest one of your CIDRs. In order to fit into your VPC.
+
+- THIS WILL COME TOGETHER SLOWLY. you don;t have to be a network, but you need to understand CIDR ips.
+- There's a default Tenancy when you make a VPC. There's no reason to pick a different tenancy. CHoose default.
+
+### DNS functionality
+
+- you have to enable it.
+- Enable DNS resolutions
+- Enable DNS hostnames.
+- 5 of them are locked
+
+- What is a router's job?
+  - to move traffic from different subnets
+  - It examins the IP address and the destination address and figures out if it is allowed.
+
+### create route table
+
+- associate sub-net.
+- for internet access you need to attach internet gateway to your VPC.
+- Your subnet is private unless you 
+
+### Inbound rules
+
