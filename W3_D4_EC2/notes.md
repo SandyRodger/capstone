@@ -107,3 +107,7 @@
 ### partition placement groups
 
 - everything is 'on demand' until you want something else
+
+### setting up an IAM user:
+
+password: spandex9-9
