@@ -23,10 +23,24 @@ Database Setup and Connectivity Testing
 RDS Setup
 
 1. Create an RDS PostgreSQL instance. Make sure to select the Sandbox option and disable all options that might incur costs:
+  - DB instance identifier : capstone-test
+  - master username: postgres
+  - password: FangleBoob3--
 Deploy in private subnets
 Configure appropriate security groups
 Create database subnet group
-Note the connection endpoint
+- create new subnet group
+Note the connection endpoint : database-3.c4r4ygas4oqi.us-east-1.rds.amazonaws.com
+- VPC security group: capstone_1
+- DB port 5432
+- password authentication
+- disable everything else
+- EC2 instance: capstone_4
+
+- go back create a new subnet group with cap 4 and cap3 called 'capstone_test'
+- name `database-3`
+- EC2 instance: capstone_4
+- security groups: capstone_1, All_TCP
 2. Test RDS connectivity
 From the EC2 instance in the private app subnet test the connection to the RDS instance
 psql -h <your-rds-endpoint> -U postgres
