@@ -111,3 +111,94 @@
 ### setting up an IAM user:
 
 password: spandex9-9
+
+
+### homework
+
+- preston's note:
+```
+go to nginx
+make a location called /api that points to your localhost server
+make a reverse proxy
+Preston Macy (Capstone)
+3:41 PM
+"build": "tsc -b && vite build --mode development",
+Preston Macy (Capstone)
+8:17 PM
+server {
+
+root /var/www/requestbin;
+index index.html;
+
+location = / {
+try_files $uri $uri/ =404;
+}
+
+location /api {
+proxy_pass http://localhost:3000;
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection 'upgrade';
+proxy_set_header Host $host;
+proxy_cache_bypass $http_upgrade;
+}
+Preston Macy (Capstone)
+8:22 PM
+postgresql://localhost/mydb?user=other&password=secret
+const conString = "postgres://YourUserName:YourPassword@YourHostname:5432/YourDatabaseName";
+```
+
+### Steps I have taken:
+
+- Create a new branch of the repo called `aws-ec2-setup`
+- Problem: My EC2 instance is not connecting
+  - solution attempt:
+    - Actions → Networking → Manage IP addresses → Associate Elastic IP → Allocate → Associate.
+      - 18.233.73.159
+    - make sure that the subnet has an Internet Gateway route:
+      - cap1- 3 subnets are associated with the NAT gateway
+      - pick subnet "cap4"
+### Move your existing instance into a public subnet -> FAIL
+Stop your instance (EC2 → Instances → select → Instance state → Stop).
+Once stopped:
+Actions → Networking → Change subnet → pick a public subnet.
+Then: Actions → Networking → Manage IP addresses →
+Tick Assign new public IP (or better, allocate and associate an Elastic IP).
+Start the instance again.
+Security Group: make sure it has inbound rule → SSH (22) from My IP.
+Now try Connect → EC2 Instance Connect with username ec2-user (Amazon Linux) or ubuntu (Ubuntu).
+
+### make a new EC2 instance -> FAIL
+- my associated subnet: subnet5 is not public. So now I must attach an IGW to my VPC and then update the subnet's route table
+  - VPCs -> capstone_test' VPC -> Internet gateways -> `capstone_test` -> ... nothing
+  - Subnets -> cap4 -> route table = `rtb-0f2d0fa9ec05685f9`
+  - go to that route table -> edit -> add routes -> destination 0.0.0.0/0 -> target internet gateway
+  - Enable Auto-assign public IPv4 for the subnet (so new instances automatically get public IPs).
+
+### Change security group seetings to let everyone have access:
+
+The bit you’re asking about (“what CIDR block should I use?”) controls who on the internet can reach your instance.
+Common choices for Source (CIDR block):
+Only you (safe for SSH):
+87.74.227.221/32 (your current IP address).
+→ This means only your computer can SSH in on port 22.
+Everyone (for web traffic):
+0.0.0.0/0
+→ This means anyone on the internet can hit your EC2 on that port.
+Use this for HTTP (80) and HTTPS (443) if you want a public website.
+Don’t usually use it for SSH unless testing.
+
+### A list of my subnets:
+
+- Cap1 - nat - Private
+- Cap2 - nat - Private
+- Cap3 - nat - Private
+- Cap4 - igw - Public
+- Cap5 - igw - Public
+- Cap6 - igw - Public
+
+- Capstone route table has Cap1, Cap2, Cap3.
+- Subnets without explicit associations: Cap4, Cap5, Cap6
+- Nat gateway is associated with Cap2
+
+### 
