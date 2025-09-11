@@ -201,4 +201,7 @@ Don’t usually use it for SSH unless testing.
 - Subnets without explicit associations: Cap4, Cap5, Cap6
 - Nat gateway is associated with Cap2
 
-### 
+### Questions for Srdjan on Thursday morning:
+
+- Am I doing the homework for Tuesday and Wednesday seperately or as one ->I guess as one, ie thursday's work orverriding the requirements of Wednesday's work.
+- In homework instructions for yesterday if says "MongoDB workload on DocumentDB (private subnets)" -> why 'workload' here but not in the postgreSQL
