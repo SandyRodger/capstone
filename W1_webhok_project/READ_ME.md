@@ -122,3 +122,27 @@ psql -U sandyboy -d request_bin -f src/db/postgres/schema.sql
 6. test it out with POSTMAN and it should work.
 
 
+### ssh from EC2 instance
+
+The key fingerprint is:
+SHA256:1RVU57NrkaCpcOQD41w4OrJjzTh9l87b0P0sdIkGevc abmrodger@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|             .+oo|
+|        .  . . ..|
+|       = o. .. ..|
+|      + B. .o . +|
+|   . o +S+.o. .+.|
+|    B . o.=..= oo|
+|   * + . =..+.oo |
+|  . o . + o  .+E |
+|         +..  .o |
++----[SHA256]-----+
+
+- `eval "$(ssh-agent -s)"` ->Agent pid 49884
+- `ssh-add ~/.ssh/github`
+
+PORT=3000
+DATABASE_URL=postgres://postgres:master-my-babs11@<rds-endpoint>:5432/<db>?sslmode=require
+MONGO_URL=mongodb://<user>:<pass>@<docdb-endpoint>:27017/<db>?tls=true&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false
+ENV
