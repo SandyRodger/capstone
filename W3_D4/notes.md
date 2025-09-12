@@ -92,8 +92,38 @@ homework:
   - Edge locations -> aws has 200 globally.
   - But there is also regional cache, there are fewer of these but they are larger!
   - manual invalidations to kill TTLs
-  - 
 
-### HWK
+ ### trying to get it to work the next day...
 
-- 
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0QNNXmzq0dFicOCQ527j
+3WMDSBYZAy9co0OZwDWRq2Yg+RCtpDzXO181V+ubJdWZ5Kb/FcrzedPfD0XluJzB
+9z0OrTYakisTD7jSSCvyD/4qzkeoT6M5D1yxSD92pK+ntTlEqjnnaW9albZNjoeR
+U7HenijwfpdEj5UNSfEr3AFxEEXAzjgQhB986rMzzSFGSy+DVjhOhBiZrAMPWb95
+M8icxmJ1AwDbRsjaqLOwbT49mkuwHABYTZTmMwNqBiceuS8IreAMzihI3x9xEH0M
+XgFFAgh6DJfPGA+0fBvGoHzjuEOuCrQH4N1huLsXdO+J8qMSXfAZwnZTVb9rsG8+
+dQIDAQAB
+-----END PUBLIC KEY-----
+
+PremiumContentKey
+PremiumAccessGroup
+
+E1EC46Z3UVD7M2
+
+aws cloudfront sign \
+  --url https://d18d7xhu7u80d9.cloudfront.net/premium/lon35481-teaser-xxl.jpg \
+ --key-pair-id K1CMO4AMZIXLU0 \
+ --private-key file://private-key.pem \
+ --date-less-than 2025-12-31
+
+key: K1CMO4AMZIXLU0
+ 
+https://d18d7xhu7u80d9.cloudfront.net/premium/lon35481-teaser-xxl.jpg?Expires=1767139200&Signature=zBPlmEyE6PQPjBj8aMoyvAaWYqoaRg6uPeOYB~vij1EdCz5-4aKhA2c8EvS45zcg58aj7TXQ1tsG4p~wEm8LhNaex6P70LeNJ0OM0l0xuszKarOmG3-UL~6I4c14~MtC718-EA~8JNL-kLyHyEzdDwijopoH8y0E9D-8Zsnonvs~l~uK-1pj8tUOX5tT0103Iwuy9dMLeQK-GX4b5WWXBW-WNw9begmhAps04NsVZHxEdibA1aO9~ElQ5r3ZOPHEpY2RaymHZjqrKGTf2VYEgqxbGt7taSafR8xVA-j5KrAL8O1J2a5iFlHaEAgMn1BKeO29BAVr9GZdBLX4~ufDFg__&Key-Pair-Id=E1EC46Z3UVD7M
+
+- bug: my origin access was set to public rather than origin access control settings. I will need to be more careful about following instructions.
+
+bug:
+<img width="718" height="222" alt="image" src="https://github.com/user-attachments/assets/90bf343b-ed98-4521-9234-6927d68fe613" />
+
+Solution said:
+<img width="1301" height="402" alt="image" src="https://github.com/user-attachments/assets/05ee518d-7f0f-4ab8-9758-f33085ed5ac1" /> 
