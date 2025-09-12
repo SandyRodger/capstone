@@ -22,8 +22,8 @@ curl -X POST http://localhost:3000/webhook \
     "ref": "refs/heads/main",
     "repository": { "full_name": "SandyRodger/request-bin-demo" },
     "sender": { "login": "SandyRodger" },
-    "head_commit": { "id": "abc123", "message": "feat: save to mongo" },
     "commits": [
+    "head_commit": { "id": "abc123", "message": "feat: save to mongo" },
       { "id": "abc123", "message": "feat: save to mongo" },
       { "id": "def456", "message": "fix: small tweak" }
     ]
@@ -146,3 +146,6 @@ PORT=3000
 DATABASE_URL=postgres://postgres:master-my-babs11@<rds-endpoint>:5432/<db>?sslmode=require
 MONGO_URL=mongodb://<user>:<pass>@<docdb-endpoint>:27017/<db>?tls=true&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false
 ENV
+
+### final review -> what don't I understand about this app
+
