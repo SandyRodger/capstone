@@ -62,6 +62,18 @@ eval $(poetry env activate)
 - `jupyter notebook`
 - port 8888
 
+### After completing the homework, write up your personal reflections on the following questions. These will come up in the next session:
+
+1. What are foundational models?
+- Foundational LLMs are the basis
+2. Explain how LLMs generate text
+3. What are some ways foundation models differ from each other?
+4. What unique challenges do AI applications pose versus traditional applications?
+5. What are the components of a good prompt?
+6. What is a context window? Why does it exist?
+7. Beyond your prompt instructions, what might go into context?
+
+
 #### [second](https://www.youtube.com/watch?v=1Z8T36sZ9WI)
 
 
