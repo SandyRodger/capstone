@@ -95,7 +95,7 @@ eval $(poetry env activate)
 - **alignment & safety** Outputs may conflict with user values, creator intent, or ethical norms.
 - **security & misuse** - The low barrier to use (natural lanuage prompts) means attackers/bad actors can easily probe systems for weaknesses.
 - **bias/unfairness** - AI systems can amplify harmful biases present in training data.
-- **Explainability** - unline traditional software, where logic is transparent, AI decisions are often opaque ("black box")
+- **Explainability** - unlike traditional software, where logic is transparent, AI decisions are often opaque ("black box")
 - **Data dependence** - Performace depends heavily on the quantity and provenance of training data, creating risks of data poisoning or leakage.
 
 5. What are the components of a good prompt?
@@ -113,7 +113,7 @@ eval $(poetry env activate)
 - a context window is the maximum span of text (measured in tokens) that a large language model can process at once when generating outputs. It includes the user's prompt, system instructions and prior conversation history.
 - It exists because transformer models compute attention over all tokens in the input, and this has high computational and memory cost. Limiting the context window keeps training and inference feasible.
 - Example: GPT-4 may have an 8K, 32k, or even 128K token context window, meaning it can "remember" and reason over that many tokens at once.
-- Anything beyond the window is forgotten unless explicitly re-provided
+- Anything beyond the window is forgotten unless explicitly re-provided.
 
 7. Beyond your prompt instructions, what might go into context?
 
@@ -124,7 +124,19 @@ eval $(poetry env activate)
 - **metadata/formatting tokens** seperators, role indications, special tokens.
 - **External tools' outputs** if the model is augmented with search, code execution, etc., those results may also be fed into the context window.
 
+### Terms:
 
+- Parameters: (same as weights(?)) -> 700 - 4000 numbers long
+  - Parameters are the values a model learns from training data — like weights and biases in a neural network — that determine how it makes predictions.
+- model-weights:
+  - “Model weights are a type of parameter that control the strength of the connection between inputs and outputs — they scale the input signals in a neural network or regression model.”
+- Tokens: Each token has an embedding that gives it a numerical value.
+  - “Tokens are the chunks of input text (words, subwords, or symbols) that an AI model processes instead of raw sentences.”
+- Embedding: numerical value. Gives the token it's location in the vector space.
+- Transformers: Before transformers, it was Neural network, which analysed sentences sequencialy, but a transformer takes them all together. It has an algorithm that can decide the focus of the sentence.
+- self- attention: The word can focus on what it's most related to?
+- mask language models:
+  - "A masked language model is trained to predict missing words (tokens) in a sentence where some have been deliberately hidden (masked)."
 
 
 
